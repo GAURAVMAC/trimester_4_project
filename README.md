@@ -1,1 +1,2 @@
-# trimester_4_project
+# Trimester 4 Project
+Gaurav Shinkar
