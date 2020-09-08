@@ -9,8 +9,8 @@ import numpy as np
 import os
 # load our serialized face detector model from disk
 # ** Change our data_folder according to you specific disk location
-data_folder = "D:/PROJECTREF/Virtual_Cricket_project/Virtual_Cricket/Virtual_Cricket/face_detector/"
-# data_folder = os.path.join(os.curdir, 'Virtual_Cricket', 'face_detector', '')
+# data_folder = "D:/PROJECTREF/Virtual_Cricket_project/Virtual_Cricket/Virtual_Cricket/face_detector/"
+data_folder = os.path.join(os.curdir, 'Virtual_Cricket', 'Virtual_Cricket', 'face_detector', '')
 
 prototxtPath = data_folder + "deploy.prototxt"
 weightsPath = data_folder + "res10_300x300_ssd_iter_140000.caffemodel"
