@@ -16,11 +16,12 @@ data_folder = os.path.join(os.curdir, 'Virtual_Cricket', 'Virtual_Cricket', 'fac
 prototxtPath = data_folder + "deploy.prototxt"
 weightsPath = data_folder + "res10_300x300_ssd_iter_140000.caffemodel"
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
-maskNet = load_model(data_folder + "mask_detector.model")
+maskNet = load_model(data_folder + "project.h5")
 
 class MaskDetect(object):
 	def __init__(self):
 		self.vs = VideoStream(src=0).start()
+		# self.vs = VideoStream(src=0)
 
 	def __del__(self):
 		cv2.destroyAllWindows()
