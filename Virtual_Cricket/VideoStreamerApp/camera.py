@@ -7,6 +7,7 @@ import imutils
 import cv2
 import numpy as np
 import os
+
 # load our serialized face detector model from disk
 # ** Change our data_folder according to you specific disk location
 # data_folder = "D:/PROJECTREF/Virtual_Cricket_project/Virtual_Cricket/Virtual_Cricket/face_detector/"
@@ -24,12 +25,17 @@ class MaskDetect(object):
 	def __del__(self):
 		cv2.destroyAllWindows()
 
+	def start(self):
+		self.vs.start()
+
+	def stop(self):
+		self.vs.stop()
+
 	def detect_and_predict_mask(self,frame, faceNet, maskNet):
 		# grab the dimensions of the frame and then construct a blob
 		# from it
 		(h, w) = frame.shape[:2]
-		blob = cv2.dnn.blobFromImage(frame, 1.0, (300, 300),
-									 (104.0, 177.0, 123.0))
+		blob = cv2.dnn.blobFromImage(frame, 1.0, (300, 300), (104.0, 177.0, 123.0))
 
 		# pass the blob through the network and obtain the face detections
 		faceNet.setInput(blob)

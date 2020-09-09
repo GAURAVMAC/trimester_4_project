@@ -7,7 +7,16 @@ from .camera import MaskDetect
 
 
 def index(request):
-    return render(request, 'VideoStreamerApp/home.html')
+    runs = 1
+    USER = True
+    show_variables = dict(
+        bot_runs=17,
+        bot_runs_array=[],
+        user_runs=18,
+        user_runs_array=[],
+        message=f'{"USER" if USER else "BOT"} WON BY {abs(runs)} RUNS'
+    )
+    return render(request, 'VideoStreamerApp/home.html', context=show_variables)
 
 
 def gen(camera):
